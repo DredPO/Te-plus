@@ -1,6 +1,3 @@
 Te+ - is an improved Linux-based terminal written in Python! 
 Version: 1.0
 License: none
-Coming updates:
-2.0 - add command "cm" (on Linux - cmod), the commanted code.
-That is all that I wanted to say. Bye! 
