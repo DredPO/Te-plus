@@ -7,8 +7,8 @@ Version: 1.1
 In the patch: 
 
 1. Adding comments to the code.
-2. Correction of some bugs
-3. Deleting a file and adding a given file
+2. Correction of some bugs.
+3. Deleting a file and adding a given file.
 
 ---------------------------------------------------------------------
 
