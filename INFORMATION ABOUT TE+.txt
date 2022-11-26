@@ -1,3 +1,0 @@
-Te+ - is an improved Linux-based terminal written in Python! 
-Version: 1.0
-License: none
