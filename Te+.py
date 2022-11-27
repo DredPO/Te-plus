@@ -11,23 +11,25 @@ while True:
             print(cy1)
     # Arithmetic operations
     def ep():
-        print("Divide by zero!\n")
         print("Number 1: ")
         co = int(input())
         print("Number 2: ")
         co2 = int(input())
         print("Char: ")
         co1 = input()
-        if co1 == "+":
-            print("Result: " + str(co + co2))
-        if co1 == "-":
-            print("Result: " + str(co - co2))
-        if co1 == "\*":
-            print("Result: " + str(co * co2))
-        if co1 == "/":
-            print("Result: " + str(co / co2))
-        if co1 == "%":
-            print("Result: " + str(co % co2))
+        try:
+            if co1 == "+":
+                print("Result: " + str(co + co2))
+            if co1 == "-":
+                print("Result: " + str(co - co2))
+            if co1 == "\*":
+                print("Result: " + str(co * co2))
+            if co1 == "/":
+                print("Result: " + str(co / co2))
+            if co1 == "%":
+                print("Result: " + str(co % co2))
+        except(ZeroDivisionError):
+            print("Divide by zero!\n")
     # Obtaining path
     def gec():
         print(os.getcwd())
@@ -116,7 +118,7 @@ while True:
     def ges():
         N = input("Name: ")
         print(os.path.getsize(N))
-    
+
     commmand = input()
 
     if commmand == "cy":
