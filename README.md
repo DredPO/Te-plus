@@ -2,13 +2,11 @@ Te+ - is an improved Linux-based terminal written in Python!
 
 ---------------------------------------------------------------
 
-Version: 1.1
+Version: 1.2 (version full name: 1.2tp)
 
 In the patch: 
 
-1. Adding comments to the code.
-2. Correction of some bugs.
-3. Deleting a file and adding a given file.
+1. Added exception handler for arithmetic operations
 
 ---------------------------------------------------------------------
 
