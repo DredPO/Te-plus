@@ -1,3 +1,7 @@
+HOW DO I INSTALL THE SOFTWARE?
+ It's easy. You just need to download the basic code, download the colorama module and you're done! Next either do everything in the development
+environment or install the pyinstaller module (or other alternatives) and use it to create an .exe file.
+
 Commands:
 cy - message cycle
 ep - arithmetic operations
