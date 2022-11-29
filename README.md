@@ -10,10 +10,11 @@ In the update:
 2. Fix bugs
 3. Creating documentation
 4. Removing an icon
+5. Added licence
 
 ---------------------------------------------------------------------
 
-License: none
+License: GNU GPL 3.0
 
 This is the latest update, so you can do whatever you want with Te+.
 
