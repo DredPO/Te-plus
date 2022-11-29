@@ -1,169 +1,215 @@
 import os
+from colorama import Fore
 
-print("Hello! \nWelcome to Te+!" + "\nInput your command:\n ")
+print(Fore.BLUE + "\t\t\t\t\t\t\t\t\t\t\t\tTE+\n\t\t\t\t\t\t\t\t\t\t\tVersion: 2.0")
+print(Fore.BLUE + "\t\t\t\t\t\t\t\t\t\t--------------------")
+print(Fore.LIGHTGREEN_EX + "\n\aInput your command:\n ")
 
 while True:
     # Message cycle
     def cy():
-        print("Message: ")
+        print(Fore.LIGHTGREEN_EX + "Message: ")
         cy1 = input()
-        while(True):
+        while True:
             print(cy1)
+
+
     # Arithmetic operations
     def ep():
-        print("Number 1: ")
+        print(Fore.LIGHTGREEN_EX + "Number 1: ")
         co = int(input())
-        print("Number 2: ")
+        print(Fore.LIGHTGREEN_EX + "Number 2: ")
         co2 = int(input())
-        print("Char: ")
+        print(Fore.LIGHTGREEN_EX + "Char: ")
         co1 = input()
         try:
             if co1 == "+":
-                print("Result: " + str(co + co2))
+                print(Fore.LIGHTGREEN_EX + "Result: " + str(co + co2))
             if co1 == "-":
-                print("Result: " + str(co - co2))
-            if co1 == "\*":
-                print("Result: " + str(co * co2))
+                print(Fore.LIGHTGREEN_EX + "Result: " + str(co - co2))
+            if co1 == "/*":
+                print(Fore.LIGHTGREEN_EX + "Result: " + str(co * co2))
             if co1 == "/":
-                print("Result: " + str(co / co2))
+                print(Fore.LIGHTGREEN_EX + "Result: " + str(co / co2))
             if co1 == "%":
-                print("Result: " + str(co % co2))
-        except(ZeroDivisionError):
-            print("Divide by zero!\n")
+                print(Fore.LIGHTGREEN_EX + "Result: " + str(co % co2))
+        except ZeroDivisionError:
+            print(Fore.LIGHTRED_EX + "Divide by zero!\n")
+
+
     # Obtaining path
     def gec():
-        print(os.getcwd())
+        print(Fore.LIGHTGREEN_EX + os.getcwd())
+
+
     # File sheet
     def L():
-        os.listdir()
+        return Fore.LIGHTGREEN_EX + str(os.listdir())
+
+
     # Creating a folder
     def fol():
-        cf = input("Name folder: ")
+        cf = input(Fore.LIGHTGREEN_EX + "Name folder: ")
         os.mkdir(cf)
+        print(Fore.LIGHTGREEN_EX + "Ready!")
+
     # File deletion
     def rfile():
-        cr = input("Name: ")
+        cr = input(Fore.LIGHTGREEN_EX + "Name: ")
         os.remove(cr)
+        print(Fore.LIGHTGREEN_EX + "Ready!")
+
+
     # Creating a file
     def fl():
-        s = input("Name: ")
+        s = input(Fore.LIGHTGREEN_EX + "Name: ")
         f = open(s, "w")
-        j = input("Want to enter text or you want to add? (YES, NO, ADD)\n")
+        j = input(Fore.LIGHTGREEN_EX + "Want to enter text or you want to add? (YES, NO, ADD)\n")
         if j == "YES":
-            t = input("Text: ")
+            t = input(Fore.LIGHTGREEN_EX + "Text: ")
             f.write(t)
             f.close()
         if j == "NO":
             f.close()
+
+
     # Read file
     def refol():
-        t = input("Name: ")
+        t = input(Fore.LIGHTGREEN_EX + "Name: ")
         f = open(t, "r")
         print(f.read())
-        f.close
+        f.close()
+
+
     # Adding text to a file
     def afol():
-        j = input("Name: ")
+        j = input(Fore.LIGHTGREEN_EX + "Name: ")
         f = open(j, "a")
         t = input("Text: ")
         f.write(t)
-        f.close
+        f.close()
+        print(Fore.LIGHTGREEN_EX + "Ready!")
+
     # Deleting a folder
     def rfol():
-        n = input("Name: ")
+        n = input(Fore.LIGHTRED_EX + "Name: ")
         os.rmdir(n)
+        print(Fore.LIGHTGREEN_EX + "Ready")
+
+
     # Changing the directory
     def chdr():
-        t = input("Name: ")
+        t = input(Fore.LIGHTGREEN_EX + "Name: ")
         os.chdir(t)
+
+
     # File statistics
     def stat():
-        t = input("Name file: ")
+        t = input(Fore.LIGHTGREEN_EX + "Name file: ")
         print(os.stat(t))
+
+
     # Return to the previous directory
     def mcdr():
         os.chdir("..")
+
+
     # Renaming a file
     def reN():
-        t = input("Name file: ")
-        t1 = input("New name: ")
+        t = input(Fore.LIGHTGREEN_EX + "Name file: ")
+        t1 = input(Fore.LIGHTGREEN_EX + "New name: ")
         os.rename(t, t1)
+
+
     # Creating subfolders
     def dr():
-        t = input("Name folders: ")
+        t = input(Fore.LIGHTGREEN_EX + "Name folders: ")
         os.makedirs(t)
+
+
     # Changing the file path
     def rep():
-        f = input("Name file: ")
-        f1 = input("Path: ")
+        f = input(Fore.LIGHTGREEN_EX + "Name file: ")
+        f1 = input(Fore.LIGHTGREEN_EX + "Path: ")
         os.replace(f, f1)
+
+
     # Name of the os
     def nm():
-        print(os.name)
+        print(Fore.LIGHTBLUE_EX + os.name)
+
+
     # Variable dictionary
     def env():
-        print(os.environ)
+        print(Fore.LIGHTBLUE_EX + str(os.environ))
+
+
     # File/directory serch
     def sech():
-        n = input("Name: ")
-        print(os.getenv(n))
+        n = input(Fore.LIGHTGREEN_EX + "Name: ")
+        print(Fore.LIGHTGREEN_EX + os.getenv(n))
+
+
     # Is there a file
     def pse():
-        n = input("Name: ")
+        n = input(Fore.LIGHTGREEN_EX + "Name: ")
         print(os.path.exists(n))
+
+
     # Current process id
     def idi():
-        print(os.getpid())
+        print(Fore.LIGHTYELLOW_EX + str(os.getpid()))
+
+
     # File size
     def ges():
-        N = input("Name: ")
-        print(os.path.getsize(N))
+        N = input(Fore.LIGHTGREEN_EX + "Name: ")
+        print(Fore.LIGHTGREEN_EX + str(os.path.getsize(N)))
 
-    commmand = input()
 
-    if commmand == "cy":
+    command = input()
+
+    if command == "cy":
         cy()
-    if commmand == "ep":
+    if command == "ep":
         ep()
-    if commmand == "gec":
+    if command == "gec":
         gec()
-    if commmand == "L+":
+    if command == "L+":
         L()
-    if commmand == "<+":
+    if command == "<+":
         fol()
-    if commmand == "<-=":
+    if command == "<-=":
         rfile()
-    if commmand == "<+=":
+    if command == "<+=":
         fl()
-    if commmand == "<-":
+    if command == "<-":
         rfol()
-    if commmand == "<+=?":
+    if command == "<+=?":
         refol()
-    if commmand == "<+=_":
+    if command == "<+=_":
         afol()
-    if commmand == "<=>":
+    if command == "<=>":
         chdr()
-    if commmand == "St":
+    if command == "St":
         stat()
-    if commmand == "<_>":
+    if command == "<_>":
         mcdr()
-    if commmand == "reN":
+    if command == "reN":
         reN()
-    if commmand == "<dr":
+    if command == "<dr":
         dr()
-    if commmand == "rep":
+    if command == "rep":
         rep()
-    if commmand == "nm":
+    if command == "nm":
         nm()
-    if commmand == "env":
+    if command == "env":
         env()
-    if commmand == "sech":
+    if command == "sech":
         sech()
-    if commmand == "p?":
+    if command == "p?":
         pse()
-    if commmand == "id":
+    if command == "id":
         idi()
-    if commmand == "ges":
+    if command == "ges":
         ges()
-
-

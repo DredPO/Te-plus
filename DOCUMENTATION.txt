@@ -1,0 +1,23 @@
+Commands:
+cy - message cycle
+ep - arithmetic operations
+gec - obtaining path
+L+ - file sheet
+<+ - creating a folder
+<-= - file deletion
+<+= - creating a file
+<- - deleting a folder
+<+=? - read file
+<+=_ - adding text to a file
+<=> - changing the directory
+St - file statistics
+<_> - return to the previous directory
+reN - renaming a file
+<dr - creating subfolders
+rep - changing the file path
+nm - name of the os
+env - variable dictionary
+sech - file/directory serch
+p? - Is there a file
+id - current process id
+ges - file size
