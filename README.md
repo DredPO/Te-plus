@@ -10,6 +10,7 @@ In the update:
 2. Fix bugs
 3. Updating documentation
 4. New comand
+5. New icon
 
 ---------------------------------------------------------------------
 
