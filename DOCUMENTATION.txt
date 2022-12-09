@@ -25,3 +25,4 @@ sech - file/directory serch
 p? - Is there a file
 id - current process id
 ges - file size
+cle - cleaning window

@@ -1,14 +1,25 @@
 import os
-from colorama import Fore
+from rich.progress import Progress
+from rich.console import Console
+import time
+from rich.panel import Panel
 
-print(Fore.BLUE + "\t\t\t\t\t\t\t\t\t\t\t\tTE+\n\t\t\t\t\t\t\t\t\t\t\tVersion: 2.0")
-print(Fore.BLUE + "\t\t\t\t\t\t\t\t\t\t--------------------")
-print(Fore.LIGHTGREEN_EX + "\n\aInput your command:\n ")
+with Progress() as prog:
+    task = prog.add_task("[green]Loading...", total=100)
+
+    while not prog.finished:
+        prog.update(task, advance=1)
+        time.sleep(0.02)
+
+cons = Console(width=21)
+cons.print(Panel.fit("[bold green]TE+\n[/bold green][bold blue]Version: 2.0[/bold blue]"))
+cons.print("---------------------")
+cons.print("[uu yellow]\n\aInput your command:\n [/uu yellow]")
 
 while True:
     # Message cycle
     def cy():
-        print(Fore.LIGHTGREEN_EX + "Message: ")
+        print("Message: ")
         cy1 = input()
         while True:
             print(cy1)
@@ -16,57 +27,57 @@ while True:
 
     # Arithmetic operations
     def ep():
-        print(Fore.LIGHTGREEN_EX + "Number 1: ")
+        print("Number 1: ")
         co = int(input())
-        print(Fore.LIGHTGREEN_EX + "Number 2: ")
+        print("Number 2: ")
         co2 = int(input())
-        print(Fore.LIGHTGREEN_EX + "Char: ")
+        print("Char: ")
         co1 = input()
         try:
             if co1 == "+":
-                print(Fore.LIGHTGREEN_EX + "Result: " + str(co + co2))
+                print("Result: " + str(co + co2))
             if co1 == "-":
-                print(Fore.LIGHTGREEN_EX + "Result: " + str(co - co2))
+                print("Result: " + str(co - co2))
             if co1 == "/*":
-                print(Fore.LIGHTGREEN_EX + "Result: " + str(co * co2))
+                print("Result: " + str(co * co2))
             if co1 == "/":
-                print(Fore.LIGHTGREEN_EX + "Result: " + str(co / co2))
+                print("Result: " + str(co / co2))
             if co1 == "%":
-                print(Fore.LIGHTGREEN_EX + "Result: " + str(co % co2))
+                print("Result: " + str(co % co2))
         except ZeroDivisionError:
-            print(Fore.LIGHTRED_EX + "Divide by zero!\n")
+            print("Divide by zero!\n")
 
 
     # Obtaining path
     def gec():
-        print(Fore.LIGHTGREEN_EX + os.getcwd())
+        cons.print(Panel.fit(os.getcwd()))
 
 
     # File sheet
     def L():
-        return Fore.LIGHTGREEN_EX + str(os.listdir())
+        cons.print(str(os.listdir()))
 
 
     # Creating a folder
     def fol():
-        cf = input(Fore.LIGHTGREEN_EX + "Name folder: ")
+        cf = input("Name folder: ")
         os.mkdir(cf)
-        print(Fore.LIGHTGREEN_EX + "Ready!")
+        print("Ready!")
 
     # File deletion
     def rfile():
-        cr = input(Fore.LIGHTGREEN_EX + "Name: ")
+        cr = input("Name: ")
         os.remove(cr)
-        print(Fore.LIGHTGREEN_EX + "Ready!")
+        print("Ready!")
 
 
     # Creating a file
     def fl():
-        s = input(Fore.LIGHTGREEN_EX + "Name: ")
+        s = input("Name: ")
         f = open(s, "w")
-        j = input(Fore.LIGHTGREEN_EX + "Want to enter text or you want to add? (YES, NO, ADD)\n")
+        j = input("Want to enter text or you want to add? (YES, NO, ADD)\n")
         if j == "YES":
-            t = input(Fore.LIGHTGREEN_EX + "Text: ")
+            t = input("Text: ")
             f.write(t)
             f.close()
         if j == "NO":
@@ -75,7 +86,7 @@ while True:
 
     # Read file
     def refol():
-        t = input(Fore.LIGHTGREEN_EX + "Name: ")
+        t = input("Name: ")
         f = open(t, "r")
         print(f.read())
         f.close()
@@ -83,29 +94,29 @@ while True:
 
     # Adding text to a file
     def afol():
-        j = input(Fore.LIGHTGREEN_EX + "Name: ")
+        j = input("Name: ")
         f = open(j, "a")
         t = input("Text: ")
         f.write(t)
         f.close()
-        print(Fore.LIGHTGREEN_EX + "Ready!")
+        print("Ready!")
 
     # Deleting a folder
     def rfol():
-        n = input(Fore.LIGHTRED_EX + "Name: ")
+        n = input("Name: ")
         os.rmdir(n)
-        print(Fore.LIGHTGREEN_EX + "Ready")
+        print("Ready")
 
 
     # Changing the directory
     def chdr():
-        t = input(Fore.LIGHTGREEN_EX + "Name: ")
+        t = input("Name: ")
         os.chdir(t)
 
 
     # File statistics
     def stat():
-        t = input(Fore.LIGHTGREEN_EX + "Name file: ")
+        t = input("Name file: ")
         print(os.stat(t))
 
 
@@ -116,55 +127,59 @@ while True:
 
     # Renaming a file
     def reN():
-        t = input(Fore.LIGHTGREEN_EX + "Name file: ")
-        t1 = input(Fore.LIGHTGREEN_EX + "New name: ")
+        t = input("Name file: ")
+        t1 = input("New name: ")
         os.rename(t, t1)
 
 
     # Creating subfolders
     def dr():
-        t = input(Fore.LIGHTGREEN_EX + "Name folders: ")
+        t = input("Name folders: ")
         os.makedirs(t)
 
 
     # Changing the file path
     def rep():
-        f = input(Fore.LIGHTGREEN_EX + "Name file: ")
-        f1 = input(Fore.LIGHTGREEN_EX + "Path: ")
+        f = input("Name file: ")
+        f1 = input("Path: ")
         os.replace(f, f1)
 
 
     # Name of the os
     def nm():
-        print(Fore.LIGHTBLUE_EX + os.name)
+        cons.print(Panel.fit(os.name))
 
 
     # Variable dictionary
     def env():
-        print(Fore.LIGHTBLUE_EX + str(os.environ))
+        cons.print(Panel.fit(str(os.environ)))
 
 
     # File/directory serch
     def sech():
-        n = input(Fore.LIGHTGREEN_EX + "Name: ")
-        print(Fore.LIGHTGREEN_EX + os.getenv(n))
+        n = input("Name: ")
+        print(os.getenv(n))
 
 
     # Is there a file
     def pse():
-        n = input(Fore.LIGHTGREEN_EX + "Name: ")
+        n = input("Name: ")
         print(os.path.exists(n))
 
 
     # Current process id
     def idi():
-        print(Fore.LIGHTYELLOW_EX + str(os.getpid()))
+        cons.print(Panel.fit(str(os.getpid())))
 
 
     # File size
     def ges():
-        N = input(Fore.LIGHTGREEN_EX + "Name: ")
-        print(Fore.LIGHTGREEN_EX + str(os.path.getsize(N)))
+        N = input("Name: ")
+        print(str(os.path.getsize(N)))
+
+    # Cleaning window
+    def cle():
+        os.system('cls||clear')
 
 
     command = input()
@@ -213,3 +228,6 @@ while True:
         idi()
     if command == "ges":
         ges()
+    if command == "cle":
+        cle()
+
