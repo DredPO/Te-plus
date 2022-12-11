@@ -12,7 +12,7 @@ with Progress() as prog:
         time.sleep(0.02)
 
 cons = Console(width=21)
-cons.print(Panel.fit("[bold green]TE+\n[/bold green][bold blue]Version: 2.0[/bold blue]"))
+cons.print(Panel.fit("[bold green]TE+\n[/bold green][bold blue]Version: 3.0[/bold blue]"))
 cons.print("---------------------")
 cons.print("[uu yellow]\n\aInput your command:\n [/uu yellow]")
 
